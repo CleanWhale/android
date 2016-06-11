@@ -24,7 +24,7 @@ Yeah, no features. Zip. Zilch. Zero. Nada. This CW is 100% AOSP with minimal cha
 
 #### A: Yes, but straight AOSP from Google's repos tends to have issues. ####
 
-CleanWhale fixes those. For example, Google provides Vendor blobs (drivers) for all of the Nexus devices, but they miss some of the files. This stops the phone from working correctly once booted. For example, the Nexus 6 will fail to see the SIM card if you build and run straight from Google. CW has the full blobs needed for a functioning device!
+Clean Whale fixes those. For example, Google provides Vendor blobs (drivers) for all of the Nexus devices, but they miss some of the files. This stops the phone from working correctly once booted. For example, the Nexus 6 will fail to see the SIM card if you build and run straight from Google. CW has the full blobs needed for a functioning device!
 
 ### Q: Is this going to be maintained and updated with Google source? ###
 
