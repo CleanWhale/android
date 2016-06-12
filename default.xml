@@ -28,7 +28,7 @@
  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="android-prebuilts-gcc-linux-x86-arm-arm-eabi-4.9" remote="cleanwhale" revision="m" />
 
  <!-- vendor -->
- <project path="vendor/moto" name="android_vendor_moto" remote="cleanwhale" revision="master" />
+ <project path="vendor/moto" name="android_vendor_moto" remote="cleanwhale" revision="mm" />
  
  <!--- kernel -->
  <project path="kernel/moto/shamu" name="android_kernel_moto_shamu" remote="cleanwhale" revision="master" /> 
