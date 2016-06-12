@@ -2,7 +2,7 @@
 
 ## Setup your build enivornment & sync our source ##
 
-To setup your build enivornment and sync CW, please follow this guide [HERE](https://raw.githubusercontent.com/nathanchance/Android-Tools/master/Building_AOSP.txt)
+To setup your build enivornment and sync CW, please follow this guide [HERE](https://raw.githubusercontent.com/CleanWhale/android/master/Docs/how_to_set_up_build_environment.txt)
 
 ---
 
