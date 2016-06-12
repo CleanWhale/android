@@ -52,7 +52,7 @@ NOTE: This guide (as well as the setup file in the Scripts folder) is made for U
   
   * Open a terminal window
   * $sudo apt-get update
-  * $sudo apt-get install git-core gnupg flex bison gperf build-essential \
+  * $sudo apt-get install openjdk-7-jdk git-core gnupg flex bison gperf build-essential \
   zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
   lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
   libgl1-mesa-dev libxml2-utils xsltproc unzip
