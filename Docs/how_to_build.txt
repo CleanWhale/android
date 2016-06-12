@@ -1,3 +1,6 @@
+Dont have the source yet? Here's the guide on how to get it:
+https://raw.githubusercontent.com/CleanWhale/android/master/Docs/how_to_set_up_build_environment.txt
+
 ========
 |Wecome|
 ========
