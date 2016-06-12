@@ -10,7 +10,7 @@
 
  <remote  name="cleanwhale"
           fetch="https://github.com/CleanWhale/"
-          revision="refs/heads/master" />
+          revision="master" />
            
  <default revision="refs/tags/android-6.0.1_r46"
           remote="aosp"
@@ -19,8 +19,8 @@
           sync-j="8" />
 
 <project path=" build" name="android_build" remote="cleanwhale" />
-<project path=" android" name="android" remote="cleanwhale" revision="master" />
-<project path=" device/moto/shamu" name="android_device_moto_shamu" remote="cleanwhale" />
-<project path=" kernel/moto/shamu" name="android_kernel_moto_shamu" remote="cleanwhale" />
-<project path=" vendor/moto" name="android_vendor_moto" remote="cleanwhale" />
+<project path="manifest" name="android" remote="cleanwhale" />
+<project path="device/moto/shamu" name="android_device_moto_shamu" remote="cleanwhale" />
+<project path="kernel/moto/shamu" name="android_kernel_moto_shamu" remote="cleanwhale" />
+<project path="vendor/moto" name="android_vendor_moto" remote="cleanwhale" />
 </manifest>
