@@ -16,7 +16,7 @@ To setup your build enivornment and sync CW, please follow this guide [HERE](htt
 
 #### A: Close! ####
 
-Clean Whale is a ROM for the Google (Motorola) Nexus 6 (shamu)! I came up with the name because it's essentially pure AOSP running on the Nexus 6. Clean Android, Nexus 6. Clean Whale.
+Clean Whale is a ROM for the Google (Motorola) Nexus 6 (shamu)! Why the name? Because it's essentially pure AOSP running on the Nexus 6. Clean Android, Nexus 6. Clean Whale.
 
 ### Q: Okay so features? ###
 
@@ -32,12 +32,7 @@ Clean Whale fixes those. For example, Google provides Vendor blobs (drivers) for
 
 ### Q: Is this going to be maintained and updated with Google source? ###
 
-#### A: Yes, but updates might be slow because I'm a noob. ####
+#### A: Yes, but updates might be slow. ####
 
-Clean Whale is my first experience working with Android source code. This is a learning experience for me, so I may be missing some important things, I may mess some things up, and I could also completely break this.
-
-### Q: Android N? ###
-
-#### A: That'd be nice, so maybe. ####
-
-I'd like to provide a pure Android N ROM for the Nexus 6, but I'm not sure if I will (or will be able to). Once I know, you'll know.
+Clean Whale is not a "professional" build of AOSP. Although the source comes from the stable branches of Google's
+repos, builds may break simply because of noobish mistakes. This is a learning experience, so things may break.
