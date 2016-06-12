@@ -19,6 +19,7 @@ NOTE: This guide (as well as the setup file in the Scripts folder) is made for U
 * A fairly modern processor. The initial build is the longest part, and takes about 9 hours on my 2014 Bay Trail
     Intel Pentium Quad Core. Subsequent builds take far less (minutes intead of hours). I HIGHLY reccomend usin
     at least a 1st gen Intel Core i3, or AMD equivalent. Also, dual-core. Or you'll have like 48+ hour initial compile... 
+* ~50GB for the entire source code. No, I'm not kidding. At all. Minimum.
 * You NEED a MINIMUM of 2.8 GB of temp space. You will get warnings regarding running out of hard drive space with
     that amount, but it will succeed in building. My temp folder is mounted as a seperate partition and is 10GB.
     It's total overkill, but I'm building two ROMs, so better safe than sorry.
