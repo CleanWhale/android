@@ -1,3 +1,6 @@
+Already have the source? Here's the guide on how to build:
+https://raw.githubusercontent.com/CleanWhale/android/master/Docs/how_to_build.txt
+
 ========
 |Wecome|
 ========
@@ -25,6 +28,7 @@ NOTE: This guide (as well as the setup file in the Scripts folder) is made for U
     It's total overkill, but I'm building two ROMs, so better safe than sorry.
 * ~400MB of free space for the final flashable ZIP which is generated after building the ROM. It will appear in
     /SourceCodeFolder/out/something_something_ota.zip
+* An additional 50GB-100GB if you use "ccache" (HIGHLY RECCOMENDED) (Explained in how_to_build.txt)
   
   =======================
   |Setting everything up|
