@@ -1,0 +1,53 @@
+========
+|Wecome|
+========
+
+So, you got the Clean Whale source on your computer, and now you want to build it. Yay.
+Let's get started, shall we?
+
+=====================
+|System Requirements|
+=====================
+
+NOTE: This guide is made for Ubuntu 14.04 64-bit. If you have issues and you're on a different version, I can't help you.
+      
+* Ubuntu 14.04.x *****64-bit*****
+* 8GB of RAM is reccomended. You might be able to get away with 4GB, but I have 8 so I can't promise anything.
+* A fairly modern processor. The initial build is the longest part, and takes about 9 hours on my 2014 Bay Trail
+    Intel Pentium Quad Core. Subsequent builds take far less (minutes intead of hours). I HIGHLY reccomend usin
+    at least a 1st gen Intel Core i3, or AMD equivalent. Also, dual-core. Or you'll have like 48+ hour initial compile... 
+* ~50GB for the entire source code. No, I'm not kidding. At all. Minimum.
+* You NEED a MINIMUM of 2.8 GB of temp space. You will get warnings regarding running out of hard drive space with
+    that amount, but it will succeed in building. My temp folder is mounted as a seperate partition and is 10GB.
+    It's total overkill, but I'm building two ROMs, so better safe than sorry.
+* ~400MB of free space for the final flashable ZIP which is generated after building the ROM. It will appear in
+    /SourceCodeFolder/out/something_something_ota.zip
+* An additional 50GB-100GB if you use "ccache" (HIGHLY RECCOMENDED)
+
+==========================================
+|Building the source into a flashable zip|
+==========================================
+
+OPTIONAL BUT HIGHY RECCOMENDED: Enable ccache!
+ccache is a compiler cache for C and C++ that can help make builds faster. In the root of the source tree,
+do the following (don't include the $):
+  * $export USE_CCACHE=1
+  * $export CCACHE_DIR=/<path_of_your_choice>/.ccache
+  * $prebuilts/misc/linux-x86/ccache/ccache -M 50G (The suggested cache size is 50-100G)
+                    ^^^^^^^^^On Mac OS, you should replace linux-x86 with darwin-x86.
+
+=====Actually building the source=====
+Run all of the below commands from the root of the source code directory (exclude $ from the commands).
+  * $source build/envsetup.sh
+  * $lunch aosp_shamu-userdebug
+  * $make -j# (keep reading for how to use this correctly)
+      If you have a multicore processor, you can speed up the build process. Here's how:
+      * The "make" command supports working in parallel. If you suppply the correct flag, it'll take
+        advantage of your multicore processor by running on multiple cores at the same time. To do so:
+      * How many PHYSICAL cores does your CPU have (not including hyperthreading/virtual cores)?
+      * Take that, and multiply it by 2. So 2 cores, 4. 4 cores, 8. 8 cores, 16 and so on.
+      * Now, remember that number. Next, run this from the root of the soruce code folder:
+      * ===IMPORTANT! KEEP READING BEFORE FOLLOWING NEXT STEP!
+      * $make -j# (replace # with the number you got. Example: make -j8)
+  NOTE: The first build will take a long time (if you don't use ccache, so will every other build). The first build
+        will take a couple hours (first builds for me take around 9 hours).
