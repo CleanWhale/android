@@ -43,7 +43,7 @@ do the following (don't include the $):
 Run all of the below commands from the root of the source code directory (exclude $ from the commands).
   * $source build/envsetup.sh
   * $lunch aosp_shamu-userdebug
-  * $make -j# (keep reading for how to use this correctly)
+  * $make otapackage -j# (keep reading for how to use this correctly)
       If you have a multicore processor, you can speed up the build process. Here's how:
       * The "make" command supports working in parallel. If you suppply the correct flag, it'll take
         advantage of your multicore processor by running on multiple cores at the same time. To do so:
