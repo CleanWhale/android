@@ -4,6 +4,10 @@
 
 To setup your build enivornment and sync CW, please follow this guide [HERE](https://raw.githubusercontent.com/CleanWhale/android/master/Docs/how_to_set_up_build_environment.txt)
 
+### Documentation and Scripts ###
+
+[You can find guides and some helpful scripts here!](https://github.com/CleanWhale/android/tree/master/Docs)
+
 ---
 
 # FAQ #
