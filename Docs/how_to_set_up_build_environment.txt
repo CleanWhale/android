@@ -1,0 +1,83 @@
+========
+|Wecome|
+========
+
+So, you want to build working AOSP goodness for yourself? Not quite sure how, or just want some extra
+guidance for this particular source? You're headed in the right direction. Here's how to download the source and setup
+your environment for building.
+
+=====================
+|System Requirements|
+=====================
+
+NOTE: This guide (as well as the setup file in the Scripts folder) is made for Ubuntu 14.04 64-bit.
+      If you use a different version of Ubuntu (or a different Linux distrubution), do not expect
+      this guide or the script to help you. Eventually, you'll hit a wall and be unable to continue.
+      
+* Ubuntu 14.04.x *****64-bit*****
+* 8GB of RAM is reccomended. You might be able to get away with 4GB, but I have 8 so I can't promise anything.
+* A fairly modern processor. The initial build is the longest part, and takes about 9 hours on my 2014 Bay Trail
+    Intel Pentium Quad Core. Subsequent builds take far less (minutes intead of hours). I HIGHLY reccomend usin
+    at least a 1st gen Intel Core i3, or AMD equivalent. Also, dual-core. Or you'll have like 48+ hour initial compile... 
+* You NEED a MINIMUM of 2.8 GB of temp space. You will get warnings regarding running out of hard drive space with
+    that amount, but it will succeed in building. My temp folder is mounted as a seperate partition and is 10GB.
+    It's total overkill, but I'm building two ROMs, so better safe than sorry.
+* ~400MB of free space for the final flashable ZIP which is generated after building the ROM. It will appear in
+    /SourceCodeFolder/out/something_something_ota.zip
+  
+  =======================
+  |Setting everything up|
+  =======================
+  
+  ====Mostly automated way (reccomended)====
+  You can make this really on yourself by simply downloading and running Build_Env_Setup.sh from here:
+  https://github.com/CleanWhale/android/blob/master/Docs/Scripts/
+  Right click the file, and "Save Link As...", and save it somewhere that's easy to get to.
+  
+  Once the script is downloaded, open a file explorer, right click the script, properties, permissions,
+  and check "Allow executing file as program". Now, open a terminal window and navigate to where that
+  script is located (ex. cd ~/Desktop), and type "./Build_Env_Setup.sh" without quotations.
+  It will guide you through the process, and it will require minimal input from you.
+  
+  ====Manual way====
+  Are you a difficult person? Or maybe you just don't trust scripts? Well put on your tinfoil hat and hold
+  on to it, because you're in for a ride.
+  
+  NOTE: If there is a $ in front of text below, it's a command. Copy it (but not the $) to the terminal and run it.
+  
+  * Open a terminal window
+  * $sudo apt-get update
+  * $sudo apt-get install git-core gnupg flex bison gperf build-essential \
+  zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
+  lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
+  libgl1-mesa-dev libxml2-utils xsltproc unzip
+  * $sudo mkdir ~/bin
+  * $sudo curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  * $sudo chmod a+x ~/bin/repo
+  * $sudo chown -R $USER ~/bin/repo
+  * $sed -i '$a export PATH=~/bin:$PATH' ~/.bashrc
+  * $git config --global user.email "YOUR EMAIL GOES HERE"
+  * $git config --global user.name "YOUR USERNAME GOES HERE"
+  * $sudo mkdir ~/CleanWhale
+  * $sudo chown -R $USER ~/CleanWhale
+  * Now CLOSE ANY AND ALL terminal windows to apply changes to the ~/.bashrc file.
+  * $cd ~/CleanWhale
+  * $repo init -u https://github.com/CleanWhale/android.git
+  * $repo sync (read below to speed it up if you have a multicore CPU)
+  
+  NOTE: If you have a multicore processor, you can speed up the sync process. Here's how:
+      * The Repo command supports working in parallel. If you suppply the correct flag, it'll take
+        advantage of your multicore processor by running multiple syncs at the same time. To do so:
+      * How many PHYSICAL cores does your CPU have (not including hyperthreading/virtual cores)?
+      * Take that, and multiply it by 2. So 2 cores, 4. 4 cores, 8. 8 cores, 16 and so on.
+      * Now, remember that number. Next, run this from the CleanWhale folder:
+      * ===IMPORTANT! KEEP READING BEFORE FOLLOWING NEXT STEP!
+      * $repo sync -j# (replace # with the number you got. Example: repo sync -j8)
+      * Doing this will run 8 syncs at the same time. You're essentially speeding up your download time by 8x.
+        How? By default, $repo sync runs only one job. Meaning it downloads one at a time. Adding the -j# flag
+        lets it download multiple files at the same time.
+        
+  ===IMPORTANT! Using this to speed up sync times is great, but it comes at a price: it uses up more of your
+                bandwith. $repo sync on it's own can suck up a lot of it, but you're increasing it dramatically
+                by doing this. Make sure you stay within your bandwith limits so you don't kick everyone/everything
+                else off of your network.
