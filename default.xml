@@ -493,9 +493,6 @@
  <copyfile src="core/root.mk" dest="Makefile" />
  </project>
 
- <!-- toolchain -->
- <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.9" name="android-prebuilts-gcc-linux-x86-arm-arm-eabi-4.9" remote="cleanwhale" revision="m" />
-
  <!-- vendor -->
  <project path="vendor/moto" name="android_vendor_moto" remote="cleanwhale" revision="mm" />
  
