@@ -49,48 +49,59 @@ read agree2
 			     echo "======================================================="
         		else exit
 		fi
-sudo apt-get update
-sudo apt-get -y install openjdk-7-jdk git-core gnupg flex bison gperf build-essential \
+{
+	sudo apt-get update
+	sudo apt-get -y install openjdk-7-jdk git-core gnupg flex bison gperf build-essential \
   zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
   lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
   libgl1-mesa-dev libxml2-utils xsltproc unzip
-echo "==================================="
-echo "|Dependencies have been installed.|"
-echo "==================================="
+} &> /dev/null
+echo ""
 echo ""
 echo "============================"
 echo "|Installing Repo command...|"
 echo "============================"
-sudo mkdir ~/bin
-sudo curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-sudo chmod a+x ~/bin/repo
-sudo chown -R $USER ~/bin/repo
-sed -i '$a export PATH=~/bin:$PATH' ~/.bashrc
+{
+	sudo mkdir ~/bin
+	sudo curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+	sudo chmod a+x ~/bin/repo
+	sudo chown -R $USER ~/bin/repo
+	sed -i '$a export PATH=~/bin:$PATH' ~/.bashrc
+} &> /dev/null
 echo "==============================================="
 echo "|Repo command installed. Directory: ~/bin/repo|"
 echo "==============================================="
+echo ""
 echo ""
 echo "====================================================================="
 echo "|Configuring Git. Please type the email you want associated with it.|"
 echo "====================================================================="
 read gitemail
-git config --global user.email "$gitemail"
+{
+	git config --global user.email "$gitemail"
+} &> /dev/null
+echo ""
 echo "========================================================"
 echo "|Please type the username you want associated with Git.|"
 echo "========================================================"
 read gitusername
-git config --global user.name "$gitusername"
+{
+	git config --global user.name "$gitusername"
+} &> /dev/null
 echo ""
 echo "======================="
 echo "|Done configuring Git.|"
 echo "======================="
 echo ""
+echo ""
 echo "============================================"
 echo "|Creating directory to download source code|"
 echo "============================================"
 echo ""
+{
 sudo mkdir ~/CleanWhale
 sudo chown -R $USER ~/CleanWhale
+} &> /dev/null
 echo "==========================================="
 echo "|Directory created. Location: ~/CleanWhale|"
 echo "==========================================="
