@@ -68,6 +68,7 @@ echo "============================"
 	sudo chown -R $USER ~/bin/repo
 	sed -i '$a export PATH=~/bin:$PATH' ~/.bashrc
 } &> /dev/null
+echo ""
 echo "==============================================="
 echo "|Repo command installed. Directory: ~/bin/repo|"
 echo "==============================================="
@@ -120,4 +121,7 @@ echo "|Note that downloading the Android source code can                  |"
 echo "|take anywhere from 30 minutes, up to several hours                 |"
 echo "|depending on your internet speed.                                  |"
 echo "====================================================================="
+base64 -d <<<"ICAgICAgICAgICAgICAgICAgXyAgICAgICAgICAgXyAgICAgXyANCiAgIF9fIF8gXyBfXyAgIF9ffCB8XyBfXyBfX18gKF8pIF9ffCB8DQogIC8gX2AgfCAnXyBcIC8gX2AgfCAnX18vIF8gXHwgfC8gX2AgfA0KIHwgKF98IHwgfCB8IHwgKF98IHwgfCB8IChfKSB8IHwgKF98IHwNCiAgXF9fLF98X3wgfF98XF9fLF98X3wgIFxfX18vfF98XF9fLF98"
+echo ""
+echo ""
 exit
