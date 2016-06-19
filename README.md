@@ -8,6 +8,8 @@ To setup your build enivornment and sync CW, please follow this guide [HERE](htt
 
 [You can find guides and some helpful scripts here!](https://github.com/CleanWhale/android/tree/master/Docs)
 
+**[If you're interested in forking this and using it for your own development, please click here and read this for all of the known issues which need to be fixed (only two).](https://raw.githubusercontent.com/CleanWhale/android/master/Docs/Issues.txt)**
+
 ---
 
 # FAQ #
