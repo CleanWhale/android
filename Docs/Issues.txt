@@ -1,0 +1,12 @@
+There are a couple issues with this, and you should know about them before you do any work with this (for some reason).
+
+1. Error 7 when flashing - This is due to the updater-script verifying the System Image after flashing. I've attempted
+to fix this once, and it didn't work. The changes needed should be in "ota_from_target_files.py" in "sourceDirectory/build/
+tools/releasetools".
+
+2. Call audio is broken on Verizon Wireless - For some reason, calls work fine on every carrier except Verizon.
+I've tried *multiple* times to fix this. I've changed the libs used for audio, I've changed build.prop settings, I've
+tried changing multiple settings which effect audio and/or telephone communications and nothing has worked (some of these
+attempts haven't been pushed to Github).
+
+    If you can get both of these issues fixed, you will have a 100% fully functioning AOSP ROM.
